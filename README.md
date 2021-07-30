@@ -8,7 +8,9 @@
 
 
 # Projects
-## * [Predicting soccer club strength using transfer data](https://github.com/tdraths/spi_transfers_global)
+## [Predicting soccer club strength using transfer data](https://github.com/tdraths/spi_transfers_global)
+
+## [Predicting Employee Attrition using data from IBM-Watson HR Analytics Project
 
 
 You can use the [editor on GitHub](https://github.com/tdraths/Portfolio/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
