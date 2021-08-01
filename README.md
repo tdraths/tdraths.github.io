@@ -2,20 +2,18 @@
 *An aspiring data scientist | Springboard alum | Former VP of Sales*
 
 # Education
-* Certificate in Data Science, *Springboard*, 2021
-* Certificate, Business Essentials, *Univeristy College, London*, 2019
-* Bachelor Degree of Political Science, *University of Notre Dame*, 2003-2007
+ - Certificate in Data Science, *Springboard*, 2021
+ - Certificate, Business Essentials, *Univeristy College, London*, 2019
+ - Bachelor Degree of Political Science, *University of Notre Dame*, 2003-2007
 
 
 # Projects
-## [Predicting soccer club strength using transfer data](https://github.com/tdraths/spi_transfers_global)
+## [Predicting soccer club strength using transfer data, Version 2](https://github.com/tdraths/spi_transfers_global)
 
-## [Predicting Employee Attrition using data from IBM-Watson HR Analytics Project
+## [Predicting Employee Attrition using data from IBM-Watson HR Analytics Project](https://github.com/tdraths/employee_attrition)
 
+## [Predicting soccer club strength using transfer data, Version 1](https://github.com/tdraths/transfers_capstone)
 
-You can use the [editor on GitHub](https://github.com/tdraths/Portfolio/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
 
