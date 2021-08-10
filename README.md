@@ -32,4 +32,15 @@ My first ML project and first capstone for the [Springboard Data Science program
 **Deployed Apps**
 ### [Penguins Classifier](https://penguins-classify.herokuapp.com/)
 A classifier using the [Palmer Penguin dataset](https://github.com/allisonhorst/palmerpenguins) developed by Allison Horst in R.
- - Use the 'User Input Features' menu in the browser window to select your penguin and watch the classifier attempt a prediction.
+ - Use the 'User Input Features' menu in the browser window to select your penguin and watch the classifier predict the penguin type.
+### [Iris Classifier](https://flower-classify.herokuapp.com/)
+A classifier using the [Iris Dataset](https://scikit-learn.org/stable/datasets/toy_dataset.html#iris-dataset)
+ - Use the left-hand column to select your flower features and watch the classifier predict the flower type.
+
+### [Boston Housing Classifier](https://boston-classifier.herokuapp.com/)
+A classifier using the [Boston Housing Dataset](https://scikit-learn.org/stable/datasets/toy_dataset.html#boston-dataset)
+ - Use the left-hand column to select a house's features and watch the classifier predict the price.
+
+**Non-Deployed Apps**
+[View the Repository](https://github.com/tdraths/streamlit_projects)
+Simple .py files that demonstrate how much can be done in just a few lines of code.
