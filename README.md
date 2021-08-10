@@ -37,9 +37,9 @@ A classifier using the [Palmer Penguin dataset](https://github.com/allisonhorst/
 A classifier using the [Iris Dataset](https://scikit-learn.org/stable/datasets/toy_dataset.html#iris-dataset)
  - Use the left-hand column to select your flower features and watch the classifier predict the flower type.
 
-### [Boston Housing Classifier](https://boston-classifier.herokuapp.com/)
+<!---### [Boston Housing Classifier](https://boston-classifier.herokuapp.com/)
 A classifier using the [Boston Housing Dataset](https://scikit-learn.org/stable/datasets/toy_dataset.html#boston-dataset)
- - Use the left-hand column to select a house's features and watch the classifier predict the price.
+ - Use the left-hand column to select a house's features and watch the classifier predict the price.--->
 
 ### Non-Deployed Apps**
 [View the Repository](https://github.com/tdraths/streamlit_projects)
