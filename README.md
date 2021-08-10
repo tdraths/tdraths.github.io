@@ -41,6 +41,6 @@ A classifier using the [Iris Dataset](https://scikit-learn.org/stable/datasets/t
 A classifier using the [Boston Housing Dataset](https://scikit-learn.org/stable/datasets/toy_dataset.html#boston-dataset)
  - Use the left-hand column to select a house's features and watch the classifier predict the price.--->
 
-### Non-Deployed Apps**
+### Non-Deployed Apps
 [View the Repository](https://github.com/tdraths/streamlit_projects)
 Simple .py files that demonstrate how much can be done in just a few lines of code.
