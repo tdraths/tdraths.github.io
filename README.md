@@ -16,13 +16,15 @@ This project is the second attempt at predicting soccer team strength using tran
 - Utilized SHAP values to explain impact of each feature on predictions
 
 ## [Predicting Employee Attrition using data from IBM-Watson HR Analytics Project](https://github.com/tdraths/employee_attrition)
-- My second larger ML project, I used XGBoost to predict employee attrition at a fictional company.
+
+My second larger ML project, I used XGBoost to predict employee attrition at a fictional company.
 - I began with a very clean dataset, and so focused on feature selection and hypertuning ML algorithms to find the best fit for the data.
 - Evaluated algorithm selection using ROC-AUC scores given the imbalances in the data
 - Used SHAP values to explain feature impact on predictions
 
 ## [Predicting soccer club strength using transfer data, Version 1](https://github.com/tdraths/transfers_capstone)
- - My first ML project and first capstone for the [Springboard Data Science program](https://www.springboard.com/courses/data-science-career-track/)
+
+My first ML project and first capstone for the [Springboard Data Science program](https://www.springboard.com/courses/data-science-career-track/)
  - As it was my first project, my efforts were highly focused on cleaning the dataset, feature creation and choosing an algorithm.
  - Identified actionable next steps for a future version of the project, including better algorithm selection, hyperparameter tuning, and improved feature investigation. 
 
