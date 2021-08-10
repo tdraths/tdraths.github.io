@@ -10,39 +10,24 @@
 # Projects
 ## [Predicting soccer club strength using transfer data, Version 2](https://github.com/tdraths/spi_transfers_global)
 
+This project is the second attempt at predicting soccer team strength using transfer data. It builds upon the work in the first verion with noticeable improvements.  - Expanded the dataset to include team data from nine top European soccer leagues.
+- Used FuzzyWuzzy to standardize team & league names, as opposed to manually replacing using dictionary values.
+- Tested multiple regressors with the data, selecting RandomForest as the best suited for the dataset and saw an improvement in R2 scores of about 50% over the previous version of this project.
+- Utilized SHAP values to explain impact of each feature on predictions
+
 ## [Predicting Employee Attrition using data from IBM-Watson HR Analytics Project](https://github.com/tdraths/employee_attrition)
+- My second larger ML project, I used XGBoost to predict employee attrition at a fictional company.
+- I began with a very clean dataset, and so focused on feature selection and hypertuning ML algorithms to find the best fit for the data.
+- Evaluated algorithm selection using ROC-AUC scores given the imbalances in the data
+- Used SHAP values to explain feature impact on predictions
 
 ## [Predicting soccer club strength using transfer data, Version 1](https://github.com/tdraths/transfers_capstone)
+ - My first ML project and first capstone for the [Springboard Data Science program](https://www.springboard.com/courses/data-science-career-track/)
+ - As it was my first project, my efforts were highly focused on cleaning the dataset, feature creation and choosing an algorithm.
+ - Identified actionable next steps for a future version of the project, including better algorithm selection, hyperparameter tuning, and improved feature investigation. 
 
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/tdraths/Portfolio/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+# Simple Web Apps
+**Deployed Apps**
+### [Penguins Classifier](https://penguins-classify.herokuapp.com/)
+A classifier using the [Palmer Penguin dataset](https://github.com/allisonhorst/palmerpenguins) developed by Allison Horst in R.
+ - Use the 'User Input Features' menu in the browser window to select your penguin and watch the classifier attempt a prediction.
