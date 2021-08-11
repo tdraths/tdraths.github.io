@@ -10,6 +10,8 @@
 # Projects
 ## [Predicting soccer club strength using transfer data, Version 2](https://github.com/tdraths/spi_transfers_global)
 
+**[Medium Post]**(https://tdraths.medium.com/predicting-soccer-team-strength-version-ii-11b5c66cf9d8)
+
 This project is the second attempt at predicting soccer team strength using transfer data. It builds upon the work in the first verion with noticeable improvements.  - Expanded the dataset to include team data from nine top European soccer leagues.
 - Used FuzzyWuzzy to standardize team & league names, as opposed to manually replacing using dictionary values.
 - Tested multiple regressors with the data, selecting RandomForest as the best suited for the dataset and saw an improvement in R2 scores of about 50% over the previous version of this project.
@@ -17,12 +19,16 @@ This project is the second attempt at predicting soccer team strength using tran
 
 ## [Predicting Employee Attrition using data from IBM-Watson HR Analytics Project](https://github.com/tdraths/employee_attrition)
 
+**[Medium Post]**(https://medium.com/analytics-vidhya/predicting-employee-attrition-c06072042eec)
+
 My second larger ML project, I used XGBoost to predict employee attrition at a fictional company.
 - I began with a very clean dataset, and so focused on feature selection and hypertuning ML algorithms to find the best fit for the data.
 - Evaluated algorithm selection using ROC-AUC scores given the imbalances in the data
 - Used SHAP values to explain feature impact on predictions
 
 ## [Predicting soccer club strength using transfer data, Version 1](https://github.com/tdraths/transfers_capstone)
+
+**[Medium Post]**(https://medium.com/analytics-vidhya/transfer-windows-predicting-english-premier-league-club-ratings-779b37008353)
 
 My first ML project and first capstone for the [Springboard Data Science program](https://www.springboard.com/courses/data-science-career-track/)
  - As it was my first project, my efforts were highly focused on cleaning the dataset, feature creation and choosing an algorithm.
