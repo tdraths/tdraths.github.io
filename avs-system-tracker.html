@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>System &amp; Asset Tracker — AVS</title>
+<title>System &amp; Asset Tracker - AVS</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -104,26 +104,26 @@
 
 <header class="site">
   <div class="header-inner">
-    <p class="eyebrow"><span class="dot"></span>AVS — ATEX &amp; Verification Services</p>
+    <p class="eyebrow"><span class="dot"></span>AVS - ATEX &amp; Verification Services</p>
     <h1 class="title">System &amp; Asset Tracker</h1>
-    <p class="lede">A live version of our Master System Tracker workbook — same three-sheet structure (Master Tracker, Asset Register, System Deadlines), computed live instead of by manual XLOOKUP and COUNTIFS.</p>
+    <p class="lede">A live version of our Master System Tracker workbook - same three-sheet structure (Master Tracker, Asset Register, System Deadlines), computed live instead of by manual XLOOKUP and COUNTIFS.</p>
   </div>
 </header>
 
 <div class="summary">
   <div class="stat-grid" id="stat-grid">
-    <div class="stat"><div class="num" id="stat-systems">—</div><div class="label">Systems tracked</div></div>
-    <div class="stat"><div class="num" id="stat-assets">—</div><div class="label">Total assets</div></div>
-    <div class="stat"><div class="num" id="stat-inspected-pct">—</div><div class="label">Overall % inspected</div></div>
-    <div class="stat"><div class="num amber" id="stat-due">—</div><div class="label">Systems due &lt;30 days</div></div>
-    <div class="stat"><div class="num red" id="stat-overdue">—</div><div class="label">Systems overdue</div></div>
+    <div class="stat"><div class="num" id="stat-systems">-</div><div class="label">Systems tracked</div></div>
+    <div class="stat"><div class="num" id="stat-assets">-</div><div class="label">Total assets</div></div>
+    <div class="stat"><div class="num" id="stat-inspected-pct">-</div><div class="label">Overall % inspected</div></div>
+    <div class="stat"><div class="num amber" id="stat-due">-</div><div class="label">Systems due &lt;30 days</div></div>
+    <div class="stat"><div class="num red" id="stat-overdue">-</div><div class="label">Systems overdue</div></div>
   </div>
 </div>
 
 <main>
   <div class="context">
     <p>The real workbook keeps three sheets: a <strong>Master System Tracker</strong> with per-system rollups (% installed, % in transform, % inspected, inspections outstanding), an <strong>Asset Register</strong> with a row per physical asset, and a <strong>System Deadlines</strong> lookup that the Master Tracker pulls forecasted due dates from via XLOOKUP.</p>
-    <p>This version keeps the same three sheets, but the Master Tracker's rollup columns are calculated live from the Asset Register and Deadlines data — no formulas to maintain or break. Sample data below is anonymised; upload your real workbook (same sheet names) to see it populate from actual data.</p>
+    <p>This version keeps the same three sheets, but the Master Tracker's rollup columns are calculated live from the Asset Register and Deadlines data - no formulas to maintain or break. Sample data below is anonymised; upload your real workbook (same sheet names) to see it populate from actual data.</p>
   </div>
 
   <div class="tabs">
@@ -151,16 +151,16 @@
 
   <div class="demonstrates">
     <h2>What this shows</h2>
-    <p>Recognising a manual, formula-maintained rollup process and rebuilding it as a live, self-checking system — the same instinct as the inspection tooling, applied to the tracking workbook itself.</p>
+    <p>Recognising a manual, formula-maintained rollup process and rebuilding it as a live, self-checking system - the same instinct as the inspection tooling, applied to the tracking workbook itself.</p>
   </div>
 
-  <p class="tech-note">Originally three linked Excel sheets (XLOOKUP + COUNTIFS). Rebuilt here as a static web app — vanilla HTML/CSS/JS, SheetJS for reading uploaded workbooks. Nothing uploaded leaves your browser.</p>
+  <p class="tech-note">Originally three linked Excel sheets (XLOOKUP + COUNTIFS). Rebuilt here as a static web app - vanilla HTML/CSS/JS, SheetJS for reading uploaded workbooks. Nothing uploaded leaves your browser.</p>
 </main>
 
 <script>
   // ---------- Sample data (anonymised, stands in for the real workbook) ----------
 
-  // Sheet: Master System Tracker — system-level fields NOT derived from other sheets
+  // Sheet: Master System Tracker - system-level fields NOT derived from other sheets
   const systemMeta = [
     { system:"SYS-001", description:"Fire & Gas Detection",  building:"Solvent Store" },
     { system:"SYS-002", description:"Earthing & Bonding",    building:"Batch Mixing Rm 2" },
@@ -410,7 +410,7 @@
   filterA.addEventListener("change", e => { state.a = e.target.value; renderBody(); });
   filterB.addEventListener("change", e => { state.b = e.target.value; renderBody(); });
 
-  // ---------- Upload (SheetJS) — reads the real three-sheet workbook ----------
+  // ---------- Upload (SheetJS) - reads the real three-sheet workbook ----------
   const uploadTrigger = document.getElementById("upload-trigger");
   const fileInput = document.getElementById("file-input");
   uploadTrigger.addEventListener("click", () => fileInput.click());
@@ -498,7 +498,7 @@
         }
 
         if (found.length === 0) {
-          uploadNote.textContent = `Couldn't find sheets named "Master…", "Asset…" or "Deadline…" in "${file.name}" — rename the tabs to match, or check the file.`;
+          uploadNote.textContent = `Couldn't find sheets named "Master…", "Asset…" or "Deadline…" in "${file.name}" - rename the tabs to match, or check the file.`;
           uploadNote.classList.add("warn");
         } else {
           uploadNote.textContent = `Loaded from "${file.name}": ${found.join(", ")}.`;
@@ -506,7 +506,7 @@
           render();
         }
       } catch (err) {
-        uploadNote.textContent = "Couldn't read that file — check it's a valid .xlsx.";
+        uploadNote.textContent = "Couldn't read that file - check it's a valid .xlsx.";
         uploadNote.classList.add("warn");
       }
     };
