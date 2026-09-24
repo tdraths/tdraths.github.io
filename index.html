@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tom Draths</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2430;
+    --navy-2:#232E3D;
+    --paper:#F6F4EF;
+    --paper-2:#EDEAE1;
+    --ink:#1B2430;
+    --steel:#5B6577;
+    --amber:#C8880A;
+    --amber-bg:#FBF0DA;
+    --green:#2E7D5B;
+    --green-bg:#E4F1EA;
+    --red:#B23A34;
+    --line:#D8D4C8;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-data: 'IBM Plex Mono', monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:var(--font-body);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 32px;}
+
+  /* ---------- Nav ---------- */
+  nav.site-nav{
+    background:var(--navy);
+    color:var(--paper);
+    position:sticky;
+    top:0;
+    z-index:10;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .nav-inner{
+    max-width:1040px;
+    margin:0 auto;
+    padding:0 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:56px;
+  }
+  .nav-name{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:-0.01em;
+  }
+  .nav-links{
+    display:flex;
+    gap:26px;
+    font-size:13.5px;
+  }
+  .nav-links a{color:#C9CFDA;}
+  .nav-links a:hover{color:var(--paper);}
+  .nav-toggle{display:none;}
+
+  @media (max-width:680px){
+    .nav-links{display:none;}
+  }
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    background:var(--navy);
+    color:var(--paper);
+    padding:56px 0 64px;
+  }
+  .eyebrow{
+    font-family:var(--font-data);
+    font-size:12.5px;
+    color:#C9CFDA;
+    margin:0 0 14px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--amber);display:inline-block;}
+  h1.title{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:clamp(30px,4.4vw,44px);
+    margin:0 0 14px;
+    letter-spacing:-0.01em;
+    max-width:640px;
+  }
+  p.lede{
+    font-size:16.5px;
+    color:#C9CFDA;
+    max-width:560px;
+    margin:0 0 26px;
+  }
+  .hero-links{
+    display:flex;
+    gap:22px;
+    font-size:13.5px;
+    font-family:var(--font-data);
+  }
+  .hero-links a{
+    color:var(--paper);
+    border-bottom:1px solid rgba(255,255,255,0.3);
+    padding-bottom:2px;
+  }
+  .hero-links a:hover{border-color:var(--amber); color:var(--amber);}
+
+  /* ---------- Sections ---------- */
+  section{padding:56px 0;}
+  section + section{border-top:1px solid var(--line);}
+
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin-bottom:26px;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  h2.section-title{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:22px;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  p.section-sub{
+    font-size:14px;
+    color:var(--steel);
+    margin:0;
+  }
+
+  /* ---------- Cards ---------- */
+  .card-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .card-grid.single-col{grid-template-columns:1fr;}
+  @media (max-width:680px){
+    .card-grid{grid-template-columns:1fr;}
+  }
+
+  .card{
+    background:var(--paper);
+    padding:24px 26px;
+    display:flex;
+    flex-direction:column;
+    transition:background 0.15s ease;
+  }
+  a.card:hover{background:#FBFAF7;}
+
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:12px;
+    margin-bottom:10px;
+  }
+  .card-title{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:17px;
+    margin:0;
+  }
+  .card-status{
+    font-family:var(--font-data);
+    font-size:11px;
+    white-space:nowrap;
+    padding:2px 8px;
+    border:1px solid transparent;
+    flex-shrink:0;
+  }
+  .card-status.live{background:var(--green-bg); color:var(--green); border-color:#CFE6DA;}
+  .card-status.progress{background:var(--amber-bg); color:var(--amber); border-color:#F0DBAF;}
+  .card-status.private{background:var(--paper-2); color:var(--steel); border-color:var(--line);}
+  .card-status.dataset{background:var(--paper-2); color:var(--ink); border-color:var(--line);}
+
+  .card-desc{
+    font-size:14px;
+    color:#3A4250;
+    margin:0 0 14px;
+    flex-grow:1;
+  }
+  .card-stack{
+    font-family:var(--font-data);
+    font-size:11.5px;
+    color:var(--steel);
+  }
+
+  /* ---------- Archive list ---------- */
+  .archive-list{
+    border:1px solid var(--line);
+    background:var(--paper);
+  }
+  .archive-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 20px;
+    border-bottom:1px solid var(--line);
+    gap:16px;
+    font-size:14px;
+  }
+  .archive-row:last-child{border-bottom:none;}
+  a.archive-row:hover{background:#FBFAF7;}
+  .archive-name{font-weight:500;}
+  .archive-desc{color:var(--steel); font-size:13px; flex:1; margin-left:20px;}
+  .archive-tag{
+    font-family:var(--font-data);
+    font-size:11px;
+    color:var(--steel);
+    white-space:nowrap;
+  }
+  @media (max-width:680px){
+    .archive-row{flex-wrap:wrap;}
+    .archive-desc{margin-left:0; flex-basis:100%;}
+  }
+
+  /* ---------- About ---------- */
+  .about-body{
+    max-width:620px;
+    font-size:15.5px;
+    color:#3A4250;
+  }
+  .about-body p{margin:0 0 14px;}
+  .about-meta{
+    margin-top:22px;
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+    font-family:var(--font-data);
+    font-size:12.5px;
+    color:var(--steel);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:34px 0 50px;
+    font-size:12.5px;
+    color:var(--steel);
+    border-top:1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <span class="nav-name">Tom Draths</span>
+    <div class="nav-links">
+      <a href="#featured">Featured</a>
+      <a href="#ongoing">Ongoing</a>
+      <a href="#data">Data &amp; Analytics</a>
+      <a href="#archive">Archive</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow"><span class="dot"></span>Kilkenny, Ireland</p>
+    <h1 class="title">I build the tools I need, then learn the trade that puts them to use.</h1>
+    <p class="lede">Co-founder of an Irish whiskey merchant. Currently training as an ATEX inspector. In between, I write software to fix the process gaps I run into.</p>
+    <div class="hero-links">
+      <a href="https://github.com/tdraths" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="featured">
+    <div class="section-head">
+      <h2 class="section-title">Featured</h2>
+      <p class="section-sub">The two projects that best show how I work</p>
+    </div>
+    <div class="card-grid">
+      <a class="card" href="projects/avs-trackers.html">
+        <div class="card-top">
+          <h3 class="card-title">ATEX Inspection Trackers</h3>
+          <span class="card-status progress">In progress</span>
+        </div>
+        <p class="card-desc">A live equipment register and non-conformance log, built to replace two static Excel workbooks used on site during my AVS apprenticeship.</p>
+        <p class="card-stack">HTML · JS · SheetJS</p>
+      </a>
+      <a class="card" href="projects/copper-and-quill.html">
+        <div class="card-top">
+          <h3 class="card-title">Copper &amp; Quill</h3>
+          <span class="card-status progress">Rollout in progress</span>
+        </div>
+        <p class="card-desc">A custom ERP built for WD O'Connell's day-to-day operations — inventory, orders, and production tracking in one system.</p>
+        <p class="card-stack">React · Vite · Supabase · Vercel</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="ongoing">
+    <div class="section-head">
+      <h2 class="section-title">Ongoing</h2>
+      <p class="section-sub">Tools I keep building on, season to season</p>
+    </div>
+    <div class="card-grid">
+      <a class="card" href="projects/hurling-training-plan.html">
+        <div class="card-top">
+          <h3 class="card-title">U10 Hurling Training Plan</h3>
+          <span class="card-status live">Active</span>
+        </div>
+        <p class="card-desc">A 32-week coaching plan with SVG session diagrams, built for my own U10 hurling team.</p>
+        <p class="card-stack">React · Vite</p>
+      </a>
+      <a class="card" href="projects/soccer-training-plan.html">
+        <div class="card-top">
+          <h3 class="card-title">U9 Soccer Training Plan</h3>
+          <span class="card-status live">Active</span>
+        </div>
+        <p class="card-desc">Same approach for U9 soccer — also published as plain GitHub Pages links so the other coaches could open sessions without downloading files.</p>
+        <p class="card-stack">React · Vite · GitHub Pages</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="data">
+    <div class="section-head">
+      <h2 class="section-title">Data &amp; Analytics</h2>
+      <p class="section-sub">Modelling and dataset work, mostly sports-focused</p>
+    </div>
+    <div class="card-grid">
+      <a class="card" href="https://github.com/tdraths/hurling-match-data" target="_blank" rel="noopener">
+        <div class="card-top">
+          <h3 class="card-title">Hurling Match Data</h3>
+          <span class="card-status dataset">Open dataset</span>
+        </div>
+        <p class="card-desc">Puckout and set-piece data hand-coded from broadcast footage, All-Ireland Senior Hurling Championship 2021–2025. Public domain (CC0).</p>
+        <p class="card-stack">Python · pandas</p>
+      </a>
+      <a class="card" href="https://github.com/tdraths/spi_transfers_global" target="_blank" rel="noopener">
+        <div class="card-top">
+          <h3 class="card-title">Predicting Club Strength from Transfers</h3>
+          <span class="card-status dataset">Notebook</span>
+        </div>
+        <p class="card-desc">Predicting soccer club strength from transfer activity across nine European leagues, using RandomForest and SHAP.</p>
+        <p class="card-stack">Python · scikit-learn · SHAP</p>
+      </a>
+      <a class="card" href="https://github.com/tdraths/employee_attrition" target="_blank" rel="noopener">
+        <div class="card-top">
+          <h3 class="card-title">Predicting Employee Attrition</h3>
+          <span class="card-status dataset">Notebook</span>
+        </div>
+        <p class="card-desc">Modelling attrition on IBM's HR Analytics dataset with XGBoost, evaluated on ROC-AUC given class imbalance.</p>
+        <p class="card-stack">Python · XGBoost · SHAP</p>
+      </a>
+      <a class="card" href="https://github.com/tdraths/transfers_capstone" target="_blank" rel="noopener">
+        <div class="card-top">
+          <h3 class="card-title">Club Strength — v1</h3>
+          <span class="card-status dataset">Notebook</span>
+        </div>
+        <p class="card-desc">My first ML capstone — the original version of the transfer-data project, since expanded and rebuilt.</p>
+        <p class="card-stack">Python · scikit-learn</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="archive">
+    <div class="section-head">
+      <h2 class="section-title">Archive</h2>
+      <p class="section-sub">Smaller builds, still worth a look</p>
+    </div>
+    <div class="archive-list">
+      <div class="archive-row">
+        <span class="archive-name">Bulwark — TTS Newsletter Reader</span>
+        <span class="archive-desc">ElevenLabs-narrated reader for a daily Substack newsletter.</span>
+        <span class="archive-tag">Private repo</span>
+      </div>
+      <div class="archive-row">
+        <span class="archive-name">Whiskey Ops</span>
+        <span class="archive-desc">ABV calculation tool for spirits production — temperature correction, dilution, PDF/CSV export.</span>
+        <span class="archive-tag">Private repo</span>
+      </div>
+      <div class="archive-row">
+        <span class="archive-name">Tasting Ticketing App</span>
+        <span class="archive-desc">Self-hosted ticketing for a friend's monthly whiskey tasting events.</span>
+        <span class="archive-tag">Live use</span>
+      </div>
+      <div class="archive-row">
+        <span class="archive-name">The Notice Board</span>
+        <span class="archive-desc">A Taskmaster-inspired family game, built as a single self-contained HTML file.</span>
+        <span class="archive-tag">HTML</span>
+      </div>
+      <div class="archive-row">
+        <span class="archive-name">Penguin &amp; Iris Classifiers</span>
+        <span class="archive-desc">Early scikit-learn classifiers from the Springboard program.</span>
+        <span class="archive-tag">Needs re-hosting</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-head">
+      <h2 class="section-title">About</h2>
+    </div>
+    <div class="about-body">
+      <p>I'm Tom — co-founder of WD O'Connell, an Irish whiskey merchant, where I've spent the past several years running digital operations, brand development, and product launches. Alongside that, I build the tools the business runs on, including Copper &amp; Quill, a custom ERP.</p>
+      <p>I'm currently training as an ATEX inspector with AVS in Dungarvan, and building the inspection tooling featured on this site to close gaps I've run into on site. I'm drawn to work where process, tooling, and hands-on technical inspection meet — particularly project controls and operations roles.</p>
+      <p>Outside of that, I coach youth soccer and hurling, and keep a running interest in sports data and analytics — most recently a hand-coded open dataset from hurling broadcasts.</p>
+      <div class="about-meta">
+        <span>Kilkenny, Ireland</span>
+        <span>github.com/tdraths</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Built with plain HTML, CSS and JS — hosted on GitHub Pages.</div>
+</footer>
+
+</body>
+</html>
